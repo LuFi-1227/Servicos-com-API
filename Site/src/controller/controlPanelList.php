@@ -4,8 +4,8 @@
 
     use Conn\connection;
     $ctrl = new controlPanelList();
-    if(isset($_POST['opt'])){
-        $name = $_POST['opt'];
+    if(isset($_POST['data'])){
+        $name = $_POST['data'];
         $ctrl->list($name, "get");
     }else{
         $ctrl->list("", "get");
@@ -25,14 +25,16 @@
                 <th>Email</th>
                 <th>Usuário</th>
                 </tr>";
-            while($i < sizeof($vet)){
-                $data = $vet[$i];
-                $string = $string."<tr>
-                        <td>".$data['Uname']."</td>
-                        <td>".$data['email']."</td>
-                        <td>".$data['userName']."</td>
-                      </tr>";
-                $i++;
+            if($vet != 0){
+                while($i < count($vet)){
+                    $data = $vet[$i];
+                    $string = $string."<tr>
+                            <td>".$data['Uname']."</td>
+                            <td>".$data['email']."</td>
+                            <td>".$data['userName']."</td>
+                        </tr>";
+                    $i++;
+                }
             }
             $string = $string."</table>";
             echo $string;

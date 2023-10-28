@@ -25,6 +25,7 @@ class connection{
                 break;
             case "put" : 
                 curl_setopt ($require, CURLOPT_PUT, 1);
+                //curl_setopt ($require, CURLOPT_CUSTOMREQUEST, "PUT");
                 break;
             case "delete" : 
                 //curl_setopt ($require, CURLOPT_HTTPDELETE, 1);

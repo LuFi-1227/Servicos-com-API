@@ -12,6 +12,7 @@
     <div id="table">
 
     </div>
+    <a href="./cadUsers.php"><button>Cadastrar usuário</button></a>
 </body>
 </html>
 

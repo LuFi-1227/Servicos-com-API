@@ -16,6 +16,13 @@ $url = explode("/", $url);
                 $result = $ctrl->login(file_get_contents("php://input"));
                 echo $result;
             break;
+
+            case "cadastro":
+                $ctrl = new Controllers\Controlcad();
+                $result = $ctrl->cad(file_get_contents("php://input"));
+                echo $result;
+            break;
+        
             default:
                 $response = [
                     "status" => 404,
