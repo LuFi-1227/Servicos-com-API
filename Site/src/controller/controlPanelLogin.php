@@ -31,6 +31,7 @@
             session_start();
             $_SESSION['loginJWT'] = JWT::encode($response, "htsres", 'HS256');
             header("Location: ");
+            echo "logado";
         }
     }
 ?>
