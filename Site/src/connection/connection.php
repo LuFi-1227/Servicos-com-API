@@ -3,7 +3,7 @@ namespace Conn;
 include_once "../../vendor/autoload.php";
 
 class connection{
-    public function requestLogin($url, $method, $data){
+    public function requestAPI($url, $method, $data){
         $require = curl_init ();
         // define qual é a url destino da api (chamada de end point) que receberá a requisição
         curl_setopt ($require, CURLOPT_URL, $url);
@@ -20,18 +20,18 @@ class connection{
             case "post" : 
                 curl_setopt ($require, CURLOPT_POST, 1);
                 break;
-            /*case "get" : 
-                curl_setopt ($require, CURLOPT_GET, 1);
+            case "get" : 
+                curl_setopt ($require, CURLOPT_HTTPGET, 1);
                 break;
             case "put" : 
                 curl_setopt ($require, CURLOPT_PUT, 1);
                 break;
             case "delete" : 
-                curl_setopt ($require, CURLOPT_DELETE, 1);
+                //curl_setopt ($require, CURLOPT_HTTPDELETE, 1);
                 break;
             default : 
                 echo ("método não existe");
-                break;*/
+                break;
         }
         $response = curl_exec($require);
         return $response;

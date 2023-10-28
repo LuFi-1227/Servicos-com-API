@@ -26,12 +26,11 @@
 
             $data = json_encode($data);
 
-            $response = $api->requestLogin($url, $method, $data);
+            $response = $api->requestAPI($url, $method, $data);
             $response = json_decode($response, true);
             session_start();
             $_SESSION['loginJWT'] = JWT::encode($response, "htsres", 'HS256');
-            header("Location: ");
-            echo "logado";
+            header("Location: ../view/listUsers.php");
         }
     }
 ?>
