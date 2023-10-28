@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de novo usuário</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <form action="../controller/cadPanel.php" method="post">
-            <label for="">Usuario:</label>
-            <input type="text" name="user" value="LuFi" required>
-            <label for="">Senha</label>
-            <input type="text" name="Pass" value="senha" required>
-            <label for="">Nome</label>
-            <input type="text" name="name" value="Louis" required>
-            <label for="">Email</label>
-            <input type="text" name="email" value="senha@gmail.com" required>
-            <button type="submit">Entrar</button>
-    </form>
+<body class="body">
+    <div class="container">
+        <h1>Tela de Cadastro</h1>
+        <form action="../controller/cadPanel.php" method="post" id="loginForm">
+                <label for=""><strong>Usuario:</strong></label>
+                <input class="entrada" type="text" name="user" placeholder="Nome de Usuário"  required>
+                <label for=""><strong>Senha:</strong></label>
+                <input class="entrada" type="password" name="Pass" placeholder="Senha"  required>
+                <label for=""><strong>Nome:</strong></label>
+                <input class="entrada" type="text" name="name" placeholder="Nome Completo"  required>
+                <label for=""><strong>Email:</strong></label>
+                <input class="entrada" type="email" name="email" placeholder="seuemail@gmail.com" required>
+                <button type="submit">Entrar</button>
+        </form>
+    </div>
 </body>
 </html>

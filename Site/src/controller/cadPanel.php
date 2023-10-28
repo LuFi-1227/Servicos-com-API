@@ -29,7 +29,7 @@
 
             $response = $api->requestAPI($url, $method, $data);
             if($response){
-                //header("Location: ../view/listUsers.php");
+                header("Location: ../view/listUsers.php");
             }
         }
     }

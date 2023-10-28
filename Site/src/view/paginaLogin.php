@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="./utils/js/jquery.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="body">
     <div>
-        <form action="../controller/controlPanelLogin.php" method="post">
-            <label for="">Usuario:</label>
-            <input type="text" name="user" value="LuFi-1227" required>
-            <label for="">Senha</label>
-            <input type="text" name="Pass" value="senha" required>
-            <button type="submit">Entrar</button>
-        </form>
+        <div class="container">
+            <h1>Tela de Login</h1>
+            <form action="../controller/controlPanelLogin.php" method="post" id="loginForm">
+                <label for=""><strong>Usuario:</strong></label><br>
+                <input type="text" class="entrada" name="user" placeholder="Nome de Usuário" required><br>
+                <label for=""><strong>Senha:</strong></label><br>
+                <input type="password" class="entrada"name="Pass" placeholder="Senha" required><br>
+                <button type="submit">Entrar</button><br>
+            </form>
+        </div>
     </div>
 </body>
 </html>

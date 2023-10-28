@@ -27,11 +27,14 @@
             $data = json_encode($data);
 
             $response = $api->requestAPI($url, $method, $data);
+            $response = json_decode($response, true);
             if($response){
-                $response = json_decode($response, true);
                 session_start();
                 $_SESSION['loginJWT'] = JWT::encode($response, "htsres", 'HS256');
                 header("Location: ../view/listUsers.php");
+            }else{
+                header("Location: ../view/paginaLogin.php");
+                echo "Usuario ou senha incorretos";
             }
         }
     }
