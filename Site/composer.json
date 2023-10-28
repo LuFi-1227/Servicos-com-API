@@ -1,0 +1,19 @@
+{
+    "name": "app/app",
+    "autoload": {
+        "psr-4": {
+            "Controll\\": "src/controller",
+            "Conn\\": "src/connection",
+            "View\\": "src/view"
+        }
+    },
+    "authors": [
+        {
+            "name": "LuFi-1227",
+            "email": "luizsalvesp@protonmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.9"
+    }
+}
