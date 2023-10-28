@@ -7,9 +7,9 @@
  $url = $_SERVER ["REQUEST_URI"];
 
 $url = explode("/", $url);
-$url = $url[5];
  switch($method){
     case "POST":
+        $url = $url[5];
         switch($url){
             case "login":
                 $ctrl = new Controllers\Controllogin();
@@ -23,6 +23,27 @@ $url = $url[5];
                 ];
                 header ("HTTP/1.0 404 Page Not Allowed");
                 echo (json_encode ($response));
+        }
+    break;
+    case "GET":
+        switch($url[5]){
+            case "users":
+                $ctrl = new Controllers\Controllist();
+                $obj = [
+                    'value' => $url[6]
+                ];
+                $object = json_encode($obj);
+                $result = $ctrl->list($object);
+                echo $result;
+            break;
+            default:
+                $response = [
+                    "status" => 404,
+                    "message" => "Rota $url nao encontrada"
+                ];
+                header ("HTTP/1.0 404 Pesquisa não permitida");
+                echo (json_encode($response));
+            break;
         }
     break;
     default:
