@@ -11,9 +11,11 @@ class Datalist{
         $conn = $conn->Connect();
 
         $tablename = "users";
-
-        $query = "SELECT Uname, userName, email FROM $tablename WHERE Uname LIKE '%$name%'";
-
+        if($name != 0){
+            $query = "SELECT Uname, userName, email FROM $tablename WHERE Uname LIKE '%$name%'";
+        }else{
+            $query = "SELECT Uname, userName, email FROM $tablename";
+        }
         $result = mysqli_query($conn, $query);
 
         if(!empty($result) && mysqli_num_rows($result)>0){
