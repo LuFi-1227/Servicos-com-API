@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Usuários</title>
     <script type="text/javascript" src="./utils/js/jquery.js"></script>  
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <input type="text" name="opt">
+    <div class="container" id="cad-entrada">
+        <div class="body-div" id="search">
+            <img src="./img/search.png" class="body-div-img">
+            <input type="text" name="opt" class="entrada" placeholder="Busca">
+        </div>
+    </div>
     <div id="table">
 
     </div>
+    <div class="container" id="button-cad">
     <a href="./cadUsers.php"><button>Cadastrar usuário</button></a>
+    </div>
 </body>
 </html>
 
