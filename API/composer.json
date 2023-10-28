@@ -1,0 +1,17 @@
+{
+    "name": "luiz/api",
+    "autoload": {
+        "psr-4": {
+            "Conn\\" : "src/connection",
+            "Models\\" : "src/model",
+            "Controllers\\" : "src/controller" 
+        }
+    },
+    "authors": [
+        {
+            "name": "LuFi-1227",
+            "email": "luizsalvesp@protonmail.com"
+        }
+    ],
+    "require": {}
+}
